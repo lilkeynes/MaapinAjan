@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maapin Aku Yaa Ilma 💖</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd6e7,#ffe8f3,#f3e5ff);
+    overflow:hidden;
+    position: relative;
+}
+
+.container{
+    text-align:center;
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 40px rgba(0,0,0,.15);
+    width: 90%;
+    max-width:400px;
+    position:relative;
+    z-index:2;
+}
+
+h1{
+    color:#ff4f9a;
+    margin-bottom:15px;
+    font-size: 24px;
+}
+
+p{
+    color:#555;
+    line-height:1.6;
+    font-size: 14px;
+}
+
+
+
+/* Merapikan susunan tombol awal */
+.btns{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    position: relative;
+}
+
+button{
+    border:none;
+    padding:12px 24px;
+    font-size:16px;
+    border-radius:15px;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+#yesBtn{
+    background:#ff4f9a;
+    color:white;
+    font-weight:bold;
+    z-index: 5;
+}
+
+#noBtn{
+    background:#ddd;
+    color: #333;
+    transition: 0.1s ease; 
+}
+
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:white;
+    width:90%;
+    max-width:450px;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 10px 40px rgba(0,0,0,.2);
+    transition:.4s;
+    z-index:100;
+}
+
+.popup.active{
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.popup h2{
+    color:#ff4f9a;
+    margin-bottom:15px;
+}
+
+.close{
+    margin-top:15px;
+    background:#ff4f9a;
+    color:white;
+}
+
+.heart{
+    position:fixed;
+    font-size:24px;
+    animation:fly 4s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes fly{
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-100vh) scale(2);
+        opacity:0;
+    }
+}
+
+.sticker{
+    position:absolute;
+    font-size:50px; 
+    user-select: none;
+}
+
+.s1{top:40px; left:40px; animation: float1 4s infinite ease-in-out;}
+.s2{top:40px; right:40px; animation: float2 3.5s infinite ease-in-out;}
+.s3{bottom:40px; left:40px; animation: float3 4.5s infinite ease-in-out;}
+
+@keyframes float1 {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(15deg); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.15) rotate(-10deg); }
+}
+
+@keyframes float3 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-10px) translateX(10px); }
+}
+</style>
+</head>
+<body>
+
+<div class="sticker s1">💖</div>
+<div class="sticker s2">✨</div>
+<div class="sticker s3">🌷</div>
+
+<div class="container">
+
+    <h1>Aku Minta Maaf 🥺💖</h1>
+
+    <p>
+    Ilma, aku beneran nggak pernah berniat bikin kamu marah, kesel, sedih atau yang lain.
+    Kalau ada kata atau sikap aku yang salah,
+    aku minta maaf ya.
+    </p>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foto Polaroid Retro</title>
+  
+  <style>
+    /* Mengatur latar belakang halaman agar estetik */
+    body {
+      background-color: #e9e4dc; /* Warna krem abu-abu biar mendukung suasana retro */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    /* Kotak Bingkai Polaroid */
+    .polaroid-frame {
+      background-color: #ffffff; /* Warna putih kertas foto */
+      padding: 10px 15px 40px 15px; /* Bingkai bawah (45px) sengaja dibuat lebih tebal */
+      width: 280px; /* Lebar foto polaroid */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Efek bayangan biar timbul dari background */
+      text-align: center; 
+      transform: rotate(-3deg); /* Efek miring sedikit agar estetik dan tidak kaku */
+      transition: transform 0.3s ease; /* Efek transisi halus saat disentuh */
+    }
+
+    /* Efek interaktif saat foto disentuh/di-hover */
+    .polaroid-frame:hover {
+      transform: rotate(0deg) scale(1.05); /* Foto jadi lurus dan sedikit membesar */
+    }
+
+    /* Pengaturan gambar di dalam polaroid */
+    .polaroid-frame img {
+      width: 100%; /* Mengikuti lebar bingkai */
+      height: 260px; /* Diatur kotak agar proporsional mirip kamera instan */
+      object-fit: cover; /* Memotong gambar secara rapi jika ukurannya tidak kotak */
+      filter: sepia(35%) contrast(115%) brightness(95%); /* Filter kamera jadul analog */
+      border: 1px solid #f0f0f0; /* Garis tipis di pinggir gambar */
+    }
+
+    /* Tulisan teks/caption di bawah foto */
+    .caption {
+      margin-top: 10px;
+      font-family: 'Courier New', Courier, monospace; /* Gaya font mesin tik jadul */
+      font-size: 15px;
+      font-weight: bold;
+      color: #444444;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="polaroid-frame">
+    <img src="1780220290819.png" alt="Foto Kamera Retro">
+    <div class="caption">Maap yaa 🤡👆</div>
+  </div>
+
+</body>
+</html>
+
+
+    <div class="btns">
+        <button id="yesBtn">Maafin 💖</button>
+        <button id="noBtn">Enggak 😡</button>
+    </div>
+
+</div>
+
+<div class="popup" id="popup">
+    <h2>Untuk Ilma 💖</h2>
+    <p>
+    Hii Ilma...
+    <br><br>
+    Aku cuma mau minta maaf soal hal yang hampir tiap hari sering aku lakuin ke kamu, soalnya tiap ngobrol aku pasti ngejekin kamu aku sadar kok itu bikin kamu jadi ga mut tapi cuma itu yang bisa aku lakuin biar ada topik biar tetep ngobrol.
+    <br><br>
+    Tapi mulai sekarang kalau aku ejekin kamu lagi pas ngobrol kamu tinggal buka aja web ini lagi nandain kalau sesering apapun aku ngejek kamu aku bakal tetep minta maap.
+    <br><br>
+    Aku juga ga bermaksud bikin kamu bete tiap ngobrol tapi cuma buat bercanda doang sekali lagi maapin aku kalo tiap bercanda ngejekin kamu, kamunya jadi bete
+    <br><br>
+    Aku harap kamu bisa maafin aku, dan semoga hubungan kita bisa tetap baik baik aja dan ga saling musuhan gara gara ngejekin doang.
+    <br><br>
+    😹👆 — Ajan
+    </p>
+    <button class="close" onclick="tutup()">
+    💖 Tutup
+    </button>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const popup = document.getElementById("popup");
+
+let scale = 1;
+
+function lari() {
+    noBtn.style.position = "fixed";
+    
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    scale += 0.15;
+    yesBtn.style.transform = `scale(${scale})`;
+}
+
+noBtn.addEventListener("mouseover", lari);
+noBtn.addEventListener("touchstart", (e) => {
+    e.preventDefault(); 
+    lari();
+});
+
+yesBtn.addEventListener("click", () => {
+    popup.classList.add("active");
+
+    for(let i = 0; i < 40; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "-20px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 4000);
+    }
+});
+
+function tutup() {
+    popup.classList.remove("active");
+}
+</script>
+
+</body>
+</html>
